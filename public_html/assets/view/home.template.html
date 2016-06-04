@@ -181,11 +181,11 @@
                     <div class="module-body">
                         <div class="row books full-width">
                             <div class="clearfix text-center">
-                                <div class="col-md-3 col-sm-6">
+                                <div class="col-md-3 col-sm-6" ng-repeat="subjectBook in bestSellerBookList">
                                     <div class="book">
-                                        <a href="single-book.html">
+                                        <a href="{{subjectBook.url}}">
                                             <div class="book-cover">
-                                                <img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/01.jpg">
+                                                <img ng-src="{{subjectBook.image.src}}" width="{{subjectBook.image.width}}" height="{{subjectBook.image.height}}"  alt="{{subjectBook.image.alt}}" />
                                                 <div class="tag">
                                                     <span>sale</span>
                                                 </div>
@@ -193,112 +193,25 @@
                                         </a>
                                         <div class="book-details clearfix">
                                             <div class="book-description">
-                                                <h3 class="book-title"><a href="single-book.html">The Brief Wondrous Life of  Oscar Wao</a></h3>
-                                                <p class="book-subtitle">by <a href="single-book.html"> Cormac McCarthy</a></p>
+                                                <h3 class="book-title"><a ng-href="{{subjectBook.title.url}}">{{subjectBook.title.text}} </a></h3>
+                                                <p class="book-subtitle">by <a ng-href="{{subjectBook.subTitle.url}}">{{subjectBook.subTitle.text}}</a></p>
                                             </div>
-                                            <div class="text-center">
-                                                <div class="actions">
-                                                    <span class="book-price price">NZ$14.75</span>               
-                                                    <div class="cart-action"> 
-                                                        <a class="add-to-cart" title="Add to Cart" href="javascript:void(0);">Add to Cart</a>       
-                                                    </div>
+                                            <div class="actions">
+                                                <span class="book-price price">{{subjectBook.price}}</span>
+
+                                                <div class="cart-action"> 
+                                                    <a class="add-to-cart" title="Add to Cart"  href="" ng-click="addToCart(subjectBook.id)">Add to Cart</a>       
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="book">
-                                        <a href="single-book.html"><div class="book-cover">
-                                                <img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/02.jpg">
-                                            </div></a>
-                                        <div class="book-details clearfix">
-                                            <div class="book-description">
-                                                <h3 class="book-title"><a href="single-book.html">Doctor Sleep </a></h3>
-                                                <p class="book-subtitle">by <a href="single-book.html"> Stephen King</a></p>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="actions">
-                                                    <span class="book-price price">NZ$14.45</span>
-                                                    <div class="cart-action"> 
-                                                        <a class="add-to-cart" title="Add to Cart" href="single-book.html">Add to Cart</a>       
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="book">
-                                        <a href="single-book.html"><div class="book-cover">
-                                                <img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/03.jpg">
-                                            </div></a>
-                                        <div class="book-details clearfix">
-                                            <div class="book-description">
-                                                <h3 class="book-title"><a href="single-book.html">Wonder Hardcover</a></h3>
-                                                <p class="book-subtitle">by <a href="single-book.html"> R. J. Palacio</a></p>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="actions">
-                                                    <span class="book-price price">NZ$9.59</span>
-                                                    <div class="cart-action"> 
-                                                        <a class="add-to-cart" title="Add to Cart" href="single-book.html">Add to Cart</a>       
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="book">
-                                        <a href="single-book.html"><div class="book-cover">
-                                                <img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/04.jpg">
-                                            </div></a>
-                                        <div class="book-details clearfix">
-                                            <div class="book-description">
-                                                <h3 class="book-title"><a href="single-book.html">The Brief Wondrous  Life of Oscar</a></h3>
-                                                <p class="book-subtitle">by <a href="single-book.html"> Auckland City Books</a></p>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="actions">
-                                                    <span class="book-price price">NZ$12.00</span>
-                                                    <div class="cart-action"> 
-                                                        <a class="add-to-cart" title="Add to Cart" href="single-book.html">Add to Cart</a>       
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="book">
-                                        <a href="single-book.html"><div class="book-cover">
-                                                <img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/05.jpg">
-                                            </div></a>
-                                        <div class="book-details clearfix">
-                                            <div class="book-description">
-                                                <h3 class="book-title"><a href="single-book.html">How Dogs Love Us: A  Neuroscientist and His Dog </a></h3>
-                                                <p class="book-subtitle">by <a href="single-book.html"> Gregory Berns </a></p>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="actions">
-                                                    <span class="book-price price">NZ$7.95</span>
-                                                    <div class="cart-action"> 
-                                                        <a class="add-to-cart" title="Add to Cart" href="single-book.html">Add to Cart</a>       
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="view-more-holder col-md-12 center-block text-center inner-top-xs">

@@ -1,62 +1,195 @@
-var BookStore = function () {
 
+
+/* global _books */
+
+var BookStore = function () {
+    var _books = [
+        {
+            "id": 1,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/06.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 310
+
+        },
+        {
+            "id": 2,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/07.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 311
+
+        }, {
+            "id": 3,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/08.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 312
+
+        }, {
+            "id": 4,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 313
+
+        }, {
+            "id": 5,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 314
+
+        }, {
+            "id": 6,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 315
+
+        }, {
+            "id": 7,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 316
+
+        }, {
+            "id": 8,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 317
+
+        }, {
+            "id": 9,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 318
+
+        }, {
+            "id": 10,
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 319
+
+        }
+    ];
     var _bookStore = {
         "Art": {
-            "monthBookList": [
-                {
-                    "title": {
-                        "text": "Art, Architecture & Photography",
-                        "url": "#/"
-                    },
-                    "subTitle": {
-                        "text": "subTitle",
-                        "url": "#/"
-                    },
-                    "image": {
-                        "src": "assets/images/book-covers/c2.jpg",
-                        "width": "140",
-                        "height": "212",
-                        "alt": "assets/images/blank.gif"
-                    },
-                    "price": "$310"
-
-                },
-                {
-                    "title": {
-                        "text": "Art, Architecture & Photography(1)",
-                        "url": "#/"
-                    },
-                    "subTitle": {
-                        "text": "subTitle",
-                        "url": "#/"
-                    },
-                    "image": {
-                        "src": "assets/images/book-covers/c2.jpg",
-                        "width": "140",
-                        "height": "212",
-                        "alt": "assets/images/blank.gif"
-                    },
-                    "price": "$310"
-
-                },
-                {
-                    "title": {
-                        "text": "Art, Architecture & Photography(2)",
-                        "url": "#/"
-                    },
-                    "subTitle": {
-                        "text": "subTitle",
-                        "url": "#/"
-                    },
-                    "image": {
-                        "src": "assets/images/book-covers/c2.jpg",
-                        "width": "140",
-                        "height": "212",
-                        "alt": "assets/images/blank.gif"
-                    },
-                    "price": "$330"
-
-                }],
+            "monthBookList": _books,
             "subjectBookList": [
                 {
                     "title": "Art, Architecture & Photography",
@@ -165,80 +298,36 @@ var BookStore = function () {
         return  _bookStore[searchContent];
     };
 
+    var getBestSellerBooks = function () {
+        return _books;
+    };
+
     return {
         getBookStoreByPage: getBookStoreByPage,
-        getBookStroreBySearch: getBookStroreBySearch
+        getBookStroreBySearch: getBookStroreBySearch,
+        getBestSellerBooks: getBestSellerBooks
+
     };
 
 }();
 
 var CartStore = function () {
 
-    var _cartSore = [{
-            "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
-            },
-            "subTitle": {
-                "text": "subTitle",
-                "url": "#/"
-            },
-            "image": {
-                "src": "assets/images/book-covers/c2.jpg",
-                "width": "140",
-                "height": "212",
-                "alt": "assets/images/blank.gif"
-            },
-            "price": 310
+    var _cartSore = [];
 
-        },
-        {
-            "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
-            },
-            "subTitle": {
-                "text": "subTitle",
-                "url": "#/"
-            },
-            "image": {
-                "src": "assets/images/book-covers/c2.jpg",
-                "width": "140",
-                "height": "212",
-                "alt": "assets/images/blank.gif"
-            },
-            "price": 2310
-
-        },
-        {
-            "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
-            },
-            "subTitle": {
-                "text": "subTitle",
-                "url": "#/"
-            },
-            "image": {
-                "src": "assets/images/book-covers/c2.jpg",
-                "width": "140",
-                "height": "212",
-                "alt": "assets/images/blank.gif"
-            },
-            "price": 3010
-
-        }];
 
 
     var addToCart = function (bookID) {
-        _cartSore.push(bookID);
+        var bookData = BookStore.getBestSellerBooks()[bookID - 1];
+        console.log("bookID " + JSON.stringify(bookData));
+        _cartSore.push(bookData);
     };
 
     var getCarts = function () {
         var totoalAmount = 0;
         var totalItem = 0;
 
-        console.log("I am CartPageCntrl " + JSON.stringify(_cartSore));
+        console.log("I am getCarts " + JSON.stringify(_cartSore));
 
 
         for (var _cartItem in _cartSore) {
@@ -254,11 +343,11 @@ var CartStore = function () {
     };
 
     var getCartDesc = function () {
-
         var totoalAmount = 0;
         var totalItem = 0;
 
         for (var _cartItem in _cartSore) {
+            console.log(_cartSore[_cartItem].price);
             totoalAmount += _cartSore[_cartItem].price;
             totalItem += 1;
         }
@@ -268,6 +357,8 @@ var CartStore = function () {
             "totalItem": totalItem + ' items'
         };
     };
+
+
 
     return {
         addToCart: addToCart,

@@ -29,7 +29,15 @@ app.config(
         }
 );
 
+app.run(function ($rootScope) {
+    $rootScope.addToCart = function (bookID) {
+        console.log("-------------");
+        CartStore.addToCart(bookID);
+        console.log("-------------");
+        $rootScope.$emit('addToCart', {'a': 'A'});
 
+    };
+});
 
 
 app.controller("MenuCntrl", function ($scope, $route, $routeParams) {
@@ -86,9 +94,12 @@ app.controller("HomePageCntrl", function ($scope, $timeout) {
     //don't forget to call the load function
     $scope.load();
 
+    var _bestSellerBooks = BookStore.getBestSellerBooks();
+    $scope.bestSellerBookList = _bestSellerBooks;
+
 });
 
-app.controller("CartCntrl", function ($scope, $timeout, $location) {
+app.controller("CartCntrl", function ($scope, $timeout, $location, $rootScope) {
     console.log("I am CartCntrl ");
 
     $scope.cartDesc = CartStore.getCartDesc();
@@ -98,6 +109,10 @@ app.controller("CartCntrl", function ($scope, $timeout, $location) {
         $("body").toggleClass("open-sidebar");
         $scope.$emit('someEvent', {'a': 'A'});
        };
+
+    $rootScope.$on('addToCart', function (event, args) {
+        $scope.cartDesc = CartStore.getCartDesc();
+    });
 
 });
 
@@ -114,22 +129,21 @@ app.controller("CloseCtrl", function ($scope, $timeout, $location) {
     };
 
 });
-app.controller("CartPageCntrl", function ($scope, $timeout) {
+app.controller("CartPageCntrl", function ($scope, $timeout, $rootScope) {
     console.log("I am CartPageCntrl ");
     var _carts = CartStore.getCarts();
     console.log("I am CartPageCntrl " + JSON.stringify(_carts));
     $scope.cartBookList = _carts.cartBookList;
     $scope.toatalPrice = _carts.toatalPrice;
-//
-//    $scope.load = function () {
-//        $timeout(function () {
-//            HomePageJquery($);
-//        }, 0, false);
-//    };
-//
-//    //don't forget to call the load function
-//    $scope.load();
+
     $scope.$on('someEvent', function (event, args) {
+        var _carts = CartStore.getCarts();
+        console.log("I am CartPageCntrl " + JSON.stringify(_carts));
+        $scope.cartBookList = _carts.cartBookList;
+        $scope.toatalPrice = _carts.toatalPrice;
+    });
+    
+    $rootScope.$on('addToCart', function (event, args) {
         var _carts = CartStore.getCarts();
         console.log("I am CartPageCntrl " + JSON.stringify(_carts));
         $scope.cartBookList = _carts.cartBookList;
