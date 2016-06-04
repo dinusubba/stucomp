@@ -1,5 +1,5 @@
 
-/* global BookStore */
+/* global BookStore, CartStore */
 
 var app = angular.module('myApp', ['ngResource', 'ngRoute', 'angularMoment']);
 
@@ -17,6 +17,12 @@ app.config(
                         templateUrl: 'assets/view/book.template.html',
                         activetab: 'book'
                     })
+//                    .when('/cart', {
+//                        controller: 'CartPageCntrl',
+//                        templateUrl: 'assets/view/cart.template.html',
+//                        activetab: 'cart'
+//                    })
+
                     .otherwise({
                         redirectTo: '/'
                     });
@@ -80,5 +86,54 @@ app.controller("HomePageCntrl", function ($scope, $timeout) {
     //don't forget to call the load function
     $scope.load();
 
+});
+
+app.controller("CartCntrl", function ($scope, $timeout, $location) {
+    console.log("I am CartCntrl ");
+
+    $scope.cartDesc = CartStore.getCartDesc();
+
+    $scope.toggleCart = function () {
+        $("#wrapper").toggleClass("toggled right");
+        $("body").toggleClass("open-sidebar");
+        $scope.$emit('someEvent', {'a': 'A'});
+       };
+
+});
+
+//
+app.controller("CloseCtrl", function ($scope, $timeout, $location) {
+    console.log("I am CloseCtrl ");
+
+    $scope.toggleCart = function () {
+        $("#wrapper").removeClass("toggled");
+        $("#wrapper").removeClass("right");
+        $("#wrapper").removeClass("left");
+        $("body").toggleClass("open-sidebar");
+        $location.path("/");
+    };
+
+});
+app.controller("CartPageCntrl", function ($scope, $timeout) {
+    console.log("I am CartPageCntrl ");
+    var _carts = CartStore.getCarts();
+    console.log("I am CartPageCntrl " + JSON.stringify(_carts));
+    $scope.cartBookList = _carts.cartBookList;
+    $scope.toatalPrice = _carts.toatalPrice;
+//
+//    $scope.load = function () {
+//        $timeout(function () {
+//            HomePageJquery($);
+//        }, 0, false);
+//    };
+//
+//    //don't forget to call the load function
+//    $scope.load();
+    $scope.$on('someEvent', function (event, args) {
+        var _carts = CartStore.getCarts();
+        console.log("I am CartPageCntrl " + JSON.stringify(_carts));
+        $scope.cartBookList = _carts.cartBookList;
+        $scope.toatalPrice = _carts.toatalPrice;
+    });
 });
 

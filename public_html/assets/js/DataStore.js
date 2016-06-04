@@ -174,19 +174,105 @@ var BookStore = function () {
 
 var CartStore = function () {
 
-    var _cartSore = [];
+    var _cartSore = [{
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 310
+
+        },
+        {
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 2310
+
+        },
+        {
+            "title": {
+                "text": "Art, Architecture & Photography",
+                "url": "#/"
+            },
+            "subTitle": {
+                "text": "subTitle",
+                "url": "#/"
+            },
+            "image": {
+                "src": "assets/images/book-covers/c2.jpg",
+                "width": "140",
+                "height": "212",
+                "alt": "assets/images/blank.gif"
+            },
+            "price": 3010
+
+        }];
+
 
     var addToCart = function (bookID) {
         _cartSore.push(bookID);
     };
 
     var getCarts = function () {
-        return _cartSore;
+        var totoalAmount = 0;
+        var totalItem = 0;
+
+        console.log("I am CartPageCntrl " + JSON.stringify(_cartSore));
+
+
+        for (var _cartItem in _cartSore) {
+            totoalAmount += _cartSore[_cartItem].price;
+            console.log(_cartSore[_cartItem].price);
+            totalItem += 1;
+        }
+
+        return {
+            "cartBookList": _cartSore,
+            "toatalPrice": "$" + totoalAmount
+        };
+    };
+
+    var getCartDesc = function () {
+
+        var totoalAmount = 0;
+        var totalItem = 0;
+
+        for (var _cartItem in _cartSore) {
+            totoalAmount += _cartSore[_cartItem].price;
+            totalItem += 1;
+        }
+
+        return {
+            "totoalAmount": "$" + totoalAmount,
+            "totalItem": totalItem + ' items'
+        };
     };
 
     return {
         addToCart: addToCart,
-        getCarts: getCarts
+        getCarts: getCarts,
+        getCartDesc: getCartDesc
     };
 
 }();

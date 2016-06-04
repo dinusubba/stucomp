@@ -162,19 +162,13 @@ var HomePageJquery = function ($) {
         /*menu toggle
          /*===================================================================================*/
 
-        $(".menu-toggle-right").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled right");
-            $("body").toggleClass("open-sidebar");
-        });
-
         $(".menu-toggle-left").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled left");
             $("body").toggleClass("open-sidebar");
         });
 
-        $(".st-pusher-after,.remove-icon").click(function (e) {
+        $(".st-pusher-after, .remove-icon").click(function (e) {
             $("#wrapper").removeClass("toggled");
             $("#wrapper").removeClass("right");
             $("#wrapper").removeClass("left");
@@ -218,3 +212,5 @@ var HomePageJquery = function ($) {
         }
     });
 };
+
+
