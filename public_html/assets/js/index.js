@@ -58,8 +58,12 @@ app.controller("BookPageCntrl", function ($scope, $routeParams, $timeout) {
 
     //don't forget to call the load function
     $scope.load();
-    
-    $scope.subjectBookList = BookStore.getBookStoreByPage($routeParams.menuItem).subjectBookList;
+
+    var pageData = BookStore.getBookStoreByPage($routeParams.menuItem);
+
+    $scope.subjectBookList = pageData.subjectBookList;
+    $scope.monthBookList = pageData.monthBookList;
+
 
 });
 

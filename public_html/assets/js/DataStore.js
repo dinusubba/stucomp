@@ -1,7 +1,63 @@
 var BookStore = function () {
 
     var _bookStore = {
-        "Art": {"subjectBookList": [
+        "Art": {
+            "monthBookList": [
+                {
+                    "title": {
+                        "text": "Art, Architecture & Photography",
+                        "url": "#/"
+                    },
+                    "subTitle": {
+                        "text": "subTitle",
+                        "url": "#/"
+                    },
+                    "image": {
+                        "src": "assets/images/book-covers/c2.jpg",
+                        "width": "140",
+                        "height": "212",
+                        "alt": "assets/images/blank.gif"
+                    },
+                    "price": "$310"
+
+                },
+                {
+                    "title": {
+                        "text": "Art, Architecture & Photography(1)",
+                        "url": "#/"
+                    },
+                    "subTitle": {
+                        "text": "subTitle",
+                        "url": "#/"
+                    },
+                    "image": {
+                        "src": "assets/images/book-covers/c2.jpg",
+                        "width": "140",
+                        "height": "212",
+                        "alt": "assets/images/blank.gif"
+                    },
+                    "price": "$310"
+
+                },
+                {
+                    "title": {
+                        "text": "Art, Architecture & Photography(2)",
+                        "url": "#/"
+                    },
+                    "subTitle": {
+                        "text": "subTitle",
+                        "url": "#/"
+                    },
+                    "image": {
+                        "src": "assets/images/book-covers/c2.jpg",
+                        "width": "140",
+                        "height": "212",
+                        "alt": "assets/images/blank.gif"
+                    },
+                    "price": "$330"
+
+                }],
+            "subjectBookList": [
                 {
                     "title": "Art, Architecture & Photography",
                     "url": "#/",
@@ -38,7 +94,7 @@ var BookStore = function () {
                     "numberOfItems": "310 items"
 
                 },
-                 {
+                {
                     "title": "Art, Architecture & Photography",
                     "url": "#/",
                     "image": {
@@ -102,7 +158,7 @@ var BookStore = function () {
     };
 
     var getBookStoreByPage = function (PageName) {
-        return  _bookStore[PageName];
+        return  _bookStore['Art'];
     };
 
     var getBookStroreBySearch = function (searchContent) {
