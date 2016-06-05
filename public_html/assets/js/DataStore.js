@@ -192,7 +192,7 @@ var BookStore = function () {
             "monthBookList": _books,
             "subjectBookList": [
                 {
-                    "title": "Art, Architecture & Photography",
+                    "title": "Art Book1",
                     "url": "#/",
                     "image": {
                         "src": "assets/images/book-covers/c2.jpg",
@@ -239,30 +239,7 @@ var BookStore = function () {
                     "numberOfItems": "310 items"
 
                 },
-                {
-                    "title": "Art, Architecture & Photography (1)",
-                    "url": "#/",
-                    "image": {
-                        "src": "assets/images/book-covers/c2.jpg",
-                        "width": "140",
-                        "height": "212",
-                        "alt": "assets/images/blank.gif"
-                    },
-                    "numberOfItems": "310 items"
-
-                },
-                {
-                    "title": "Art, Architecture & Photography (2)",
-                    "url": "#/",
-                    "image": {
-                        "src": "assets/images/book-covers/c2.jpg",
-                        "width": "140",
-                        "height": "212",
-                        "alt": "assets/images/blank.gif"
-                    },
-                    "numberOfItems": "310 items"
-
-                }
+                
             ]},
         "Drama": {"subjectBookList": [{"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}]},
         "Humour": {"subjectBookList": [{"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}]},
