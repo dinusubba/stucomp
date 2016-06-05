@@ -12,6 +12,16 @@ app.config(
                         templateUrl: 'assets/view/home.template.html',
                         activetab: 'home'
                     })
+                    .when('/about', {
+                        controller: 'AboutPageCntrl',
+                        templateUrl: 'assets/view/about.template.html',
+                        activetab: 'home'
+                    })
+                    .when('/contact', {
+                        controller: 'ContactPageCntrl',
+                        templateUrl: 'assets/view/contact.template.html',
+                        activetab: 'home'
+                    })
                     .when('/books/:menuItem', {
                         controller: 'BookPageCntrl',
                         templateUrl: 'assets/view/book.template.html',
@@ -109,7 +119,7 @@ app.controller("BookPageCntrl", function ($scope, $routeParams, $timeout) {
 });
 
 app.controller("BookDtlPageCntrl", function ($scope, $timeout, $routeParams) {
-    console.log("I am BookDtlPageCntrl " +  $routeParams.bookID);
+    console.log("I am BookDtlPageCntrl " + $routeParams.bookID);
     $scope.bookID = $routeParams.bookID;
 
 
@@ -121,7 +131,7 @@ app.controller("BookDtlPageCntrl", function ($scope, $timeout, $routeParams) {
 
     //don't forget to call the load function
     $scope.load();
-    
+
     $scope.data = BookStore.getBookStoreByPageID($scope.bookID);
     //console.log();
 
@@ -143,6 +153,21 @@ app.controller("HomePageCntrl", function ($scope, $timeout) {
 
     var _bestSellerBooks = BookStore.getBestSellerBooks();
     $scope.bestSellerBookList = _bestSellerBooks;
+
+});
+
+
+app.controller("AboutPageCntrl", function ($scope, $timeout, $location, $rootScope) {
+    console.log("I am AboutPageCntrl ");
+
+    
+
+});
+
+app.controller("ContactPageCntrl", function ($scope, $timeout, $location, $rootScope) {
+    console.log("I am AboutPageCntrl ");
+
+    
 
 });
 
