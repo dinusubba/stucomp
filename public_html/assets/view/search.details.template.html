@@ -1,0 +1,76 @@
+<div class="content wow fadeInUp" ng-controller="SearchDtlPageCntrl">
+    <div class="container">
+        <div class="row">
+            <ul class="breadcrumb text-center">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/">Books</a></li>
+                <li class="active">Search</li>				
+            </ul>
+
+            <div class="divider">
+                <img class="img-responsive" src="assets/images/shadow.png" alt="">
+            </div><!-- /.divider -->
+        </div>
+        <div class="row inner-top-xs single-book-block">
+            <!-- .primary block -->
+            <div class="single-book primary-block" ng-if="dataPresent">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        <div class="book-cover">
+                            <img width="268" height="408" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/big-cover1.jpg">
+                        </div><!-- /.book-cover -->
+                        <div class="share-button">
+
+
+                            <div class="addthis_native_toolbox inner-top-vs"></div>
+                        </div>
+                        <div class="list-unstyled link-block inner-top-50">
+                            <a href="#customer-reviews" class='customer-review'><i class="icon fa fa-comment"></i><span class="customer-review">Customer Reviews(1) &darr; </span></a>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7">
+                        <div class="featured-book-heading">
+                            <h1 class="title">{{book.title.text}}</h1>
+                            <p class="singl-book-author">
+                                by
+                                <a href="#">R.J palacio</a>
+                            </p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p class="single-book-price">$15.99</p>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="add-cart-button btn-group">
+                                    <button class="btn btn-single btn-sm" type="button" data-toggle="dropdown">
+                                        <img src="assets/images/add-to-cart.png" alt="">
+                                    </button>
+                                    <button class="btn btn-single btn-uppercase" type="button">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="description"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                            <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+                            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                                Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p></div>
+                    </div>
+                </div>
+            </div>			    <!-- /.primary block -->
+
+            <div class="single-book primary-block" ng-if="!dataPresent">
+                No data found
+            </div>
+            <div class="divider inner-top-xs">
+                <img src="assets/images/shadow.png" class="img-responsive" alt=""/>
+            </div>
+
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.content -->
+
+

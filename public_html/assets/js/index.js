@@ -17,6 +17,11 @@ app.config(
                         templateUrl: 'assets/view/about.template.html',
                         activetab: 'home'
                     })
+                    .when('/search/:searchBook', {
+                        controller: 'SearchDtlPageCntrl',
+                        templateUrl: 'assets/view/search.details.template.html',
+                        activetab: 'home'
+                    })
                     .when('/contact', {
                         controller: 'ContactPageCntrl',
                         templateUrl: 'assets/view/contact.template.html',
@@ -64,17 +69,46 @@ app.controller("MenuCntrl", function ($scope, $route, $routeParams) {
 });
 
 
-app.controller("SearchCntrl", function ($scope) {
+app.controller("SearchCntrl", function ($scope, $location) {
     console.log("I am SearchCtrl");
     $scope.data = {
         "searchText": ''
     };
 
     $scope.search = function () {
-        alert("I am clicked" + $scope.data.searchText);
+        $location.path("/search/" + $scope.data.searchText);
     };
 });
 
+app.controller("SearchDtlPageCntrl", function ($scope, $routeParams, $timeout) {
+    console.log("I am SearchDtlPageCntrl" + $routeParams.searchBook);
+    var allBookList = BookStore.getBestSellerBooks();
+
+    $scope.book = {};
+    $scope.dataPresent = false;
+
+    for (var _book in allBookList) {
+        console.log(allBookList[_book].title.text);
+
+        if (allBookList[_book].title.text.indexOf($routeParams.searchBook) !== -1) {
+            console.log(JSON.stringify(allBookList[_book]));
+            $scope.book = allBookList[_book];
+            $scope.dataPresent = true;
+            break;
+        }
+    }
+
+    $scope.load = function () {
+        $timeout(function () {
+            HomePageJquery($);
+        }, 0, false);
+    };
+
+    //don't forget to call the load function
+    $scope.load();
+
+
+});
 
 app.controller("BookPageCntrl", function ($scope, $routeParams, $timeout) {
     console.log("I am BookPageCntrl" + $routeParams.menuItem);
