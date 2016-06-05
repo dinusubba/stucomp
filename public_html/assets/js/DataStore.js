@@ -8,7 +8,7 @@ var BookStore = function () {
             "id": 1,
             "url": "#/book/1",
             "title": {
-                "text": "Art, Architecture & Photography - 1",
+                "text": "Art, Architecture & Photography",
                 "url": "#/book/1"
             },
             "subTitle": {
@@ -28,7 +28,7 @@ var BookStore = function () {
             "id": 2,
             "url": "#/book/2",
             "title": {
-                "text": "Art, Architecture & Photography - 2 ",
+                "text": "You Are Born to Blossom",
                 "url": "#/book/2"
             },
             "subTitle": {
@@ -47,7 +47,7 @@ var BookStore = function () {
             "id": 3,
             "url": "#/book/3",
             "title": {
-                "text": "Art, Architecture & Photography - 3",
+                "text": "Life is What You Make it",
                 "url": "#/book/3"
             },
             "subTitle": {
@@ -66,7 +66,7 @@ var BookStore = function () {
             "id": 4,
             "url": "#/book/4",
             "title": {
-                "text": "Art, Architecture & Photography - 4",
+                "text": "Who Will Cry When You Die?",
                 "url": "#/"
             },
             "subTitle": {
