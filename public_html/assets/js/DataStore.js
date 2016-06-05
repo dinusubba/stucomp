@@ -6,9 +6,10 @@ var BookStore = function () {
     var _books = [
         {
             "id": 1,
+            "url": "#/book/1",
             "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
+                "text": "Art, Architecture & Photography - 1",
+                "url": "#/book/1"
             },
             "subTitle": {
                 "text": "subTitle",
@@ -25,9 +26,10 @@ var BookStore = function () {
         },
         {
             "id": 2,
+            "url": "#/book/2",
             "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
+                "text": "Art, Architecture & Photography - 2 ",
+                "url": "#/book/2"
             },
             "subTitle": {
                 "text": "subTitle",
@@ -43,9 +45,10 @@ var BookStore = function () {
 
         }, {
             "id": 3,
+            "url": "#/book/3",
             "title": {
-                "text": "Art, Architecture & Photography",
-                "url": "#/"
+                "text": "Art, Architecture & Photography - 3",
+                "url": "#/book/3"
             },
             "subTitle": {
                 "text": "subTitle",
@@ -61,8 +64,9 @@ var BookStore = function () {
 
         }, {
             "id": 4,
+            "url": "#/book/4",
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 4",
                 "url": "#/"
             },
             "subTitle": {
@@ -78,9 +82,10 @@ var BookStore = function () {
             "price": 313
 
         }, {
+            "url": "#/book/5",
             "id": 5,
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 5",
                 "url": "#/"
             },
             "subTitle": {
@@ -96,9 +101,10 @@ var BookStore = function () {
             "price": 314
 
         }, {
+            "url": "#/book/6",
             "id": 6,
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 6",
                 "url": "#/"
             },
             "subTitle": {
@@ -114,9 +120,10 @@ var BookStore = function () {
             "price": 315
 
         }, {
+            "url": "#/book/7",
             "id": 7,
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 7",
                 "url": "#/"
             },
             "subTitle": {
@@ -132,9 +139,10 @@ var BookStore = function () {
             "price": 316
 
         }, {
+            "url": "#/book/8",
             "id": 8,
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 8",
                 "url": "#/"
             },
             "subTitle": {
@@ -150,9 +158,10 @@ var BookStore = function () {
             "price": 317
 
         }, {
+            "url": "#/book/9",
             "id": 9,
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 9",
                 "url": "#/"
             },
             "subTitle": {
@@ -169,8 +178,9 @@ var BookStore = function () {
 
         }, {
             "id": 10,
+            "url": "#/book/10",
             "title": {
-                "text": "Art, Architecture & Photography",
+                "text": "Art, Architecture & Photography - 10",
                 "url": "#/"
             },
             "subTitle": {
@@ -239,7 +249,6 @@ var BookStore = function () {
                     "numberOfItems": "310 items"
 
                 },
-                
             ]},
         "Drama": {"subjectBookList": [{"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}]},
         "Humour": {"subjectBookList": [{"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}, {"title": "Art, Architecture & Photography", "url": "#/", "image": {"src": "assets/images/blank.gif", "width": "140", "height": "212", "alt": "assets/images/blank.gif"}, "numberOfItems": "310 items"}]},
@@ -271,6 +280,10 @@ var BookStore = function () {
         return  _bookStore['Art'];
     };
 
+    var getBookStoreByPageID = function (pageID) {
+        return  _books[pageID-1];
+    };
+    
     var getBookStroreBySearch = function (searchContent) {
         return  _bookStore[searchContent];
     };
@@ -282,7 +295,8 @@ var BookStore = function () {
     return {
         getBookStoreByPage: getBookStoreByPage,
         getBookStroreBySearch: getBookStroreBySearch,
-        getBestSellerBooks: getBestSellerBooks
+        getBestSellerBooks: getBestSellerBooks,
+        getBookStoreByPageID: getBookStoreByPageID
 
     };
 

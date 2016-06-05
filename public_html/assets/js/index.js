@@ -17,6 +17,12 @@ app.config(
                         templateUrl: 'assets/view/book.template.html',
                         activetab: 'book'
                     })
+                    .when('/book/:bookID', {
+                        controller: 'BookDtlPageCntrl',
+                        templateUrl: 'assets/view/book_details.template.html',
+                        activetab: 'book'
+                    })
+
 //                    .when('/cart', {
 //                        controller: 'CartPageCntrl',
 //                        templateUrl: 'assets/view/cart.template.html',
@@ -77,6 +83,47 @@ app.controller("BookPageCntrl", function ($scope, $routeParams, $timeout) {
 
     $scope.subjectBookList = pageData.subjectBookList;
     $scope.monthBookList = pageData.monthBookList;
+
+
+});
+
+app.controller("BookPageCntrl", function ($scope, $routeParams, $timeout) {
+    console.log("I am BookPageCntrl" + $routeParams.menuItem);
+
+
+    $scope.load = function () {
+        $timeout(function () {
+            HomePageJquery($);
+        }, 0, false);
+    };
+
+    //don't forget to call the load function
+    $scope.load();
+
+    var pageData = BookStore.getBookStoreByPage($routeParams.menuItem);
+
+    $scope.subjectBookList = pageData.subjectBookList;
+    $scope.monthBookList = pageData.monthBookList;
+
+
+});
+
+app.controller("BookDtlPageCntrl", function ($scope, $timeout, $routeParams) {
+    console.log("I am BookDtlPageCntrl " +  $routeParams.bookID);
+    $scope.bookID = $routeParams.bookID;
+
+
+    $scope.load = function () {
+        $timeout(function () {
+            HomePageJquery($);
+        }, 0, false);
+    };
+
+    //don't forget to call the load function
+    $scope.load();
+    
+    $scope.data = BookStore.getBookStoreByPageID($scope.bookID);
+    //console.log();
 
 
 });
@@ -142,7 +189,7 @@ app.controller("CartPageCntrl", function ($scope, $timeout, $rootScope) {
         $scope.cartBookList = _carts.cartBookList;
         $scope.toatalPrice = _carts.toatalPrice;
     });
-    
+
     $rootScope.$on('addToCart', function (event, args) {
         var _carts = CartStore.getCarts();
         console.log("I am CartPageCntrl " + JSON.stringify(_carts));
