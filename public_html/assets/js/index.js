@@ -160,14 +160,22 @@ app.controller("HomePageCntrl", function ($scope, $timeout) {
 app.controller("AboutPageCntrl", function ($scope, $timeout, $location, $rootScope) {
     console.log("I am AboutPageCntrl ");
 
-    
+
 
 });
 
 app.controller("ContactPageCntrl", function ($scope, $timeout, $location, $rootScope) {
     console.log("I am AboutPageCntrl ");
+    $scope.load = function () {
+        $timeout(function () {
+            HomePageJquery($);
+        }, 0, false);
+    };
 
-    
+    //don't forget to call the load function
+    $scope.load();
+
+
 
 });
 

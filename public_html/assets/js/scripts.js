@@ -210,7 +210,69 @@ var HomePageJquery = function ($) {
         if ($('.le-select').length > 0) {
             $('.le-select select').customSelect({customClass: 'le-select-in'});
         }
+
+        //validation
+        $('#contact_form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                first_name: {
+                    validators: {
+                        stringLength: {min: 2},
+                        notEmpty: {message: 'Please supply your first name'}
+                    }
+                },
+                last_name: {
+                    validators: {
+                        stringLength: {min: 2},
+                        notEmpty: {message: 'Please supply your last name'}
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {message: 'Please supply your email address'},
+                        emailAddress: {message: 'Please supply a valid email address'}
+                    }
+                },
+                phone: {
+                    validators: {
+                        notEmpty: {message: 'Please supply your phone number'},
+                        phone: {
+                            country: 'US',
+                            message: 'Please supply a vaild phone number with area code'
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        stringLength: {min: 8},
+                        notEmpty: {message: 'Please supply your street address'}
+                    }
+                },
+                city: {
+                    validators: {
+                        stringLength: {min: 4},
+                        notEmpty: {message: 'Please supply your city'}
+                    }
+                }
+
+
+            }
+        }).on('success.form.bv', function (e) {
+            $('#success_message').slideDown({opacity: 'show'}, 'slow');
+            $('#contact_form').data('bootstrapValidator').resetForm();
+            e.preventDefault();
+            var $form = $(e.target);
+            var bv = $form.data('bootstrapValidator');
+            $.post($form.attr('action'), $form.serialize(), function (result) {
+                console.log(result);
+            }, 'json');
+        });
     });
-};
+
+}
 
 
