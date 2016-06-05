@@ -90,7 +90,7 @@ app.controller("SearchDtlPageCntrl", function ($scope, $routeParams, $timeout) {
     for (var _book in allBookList) {
         console.log(allBookList[_book].title.text);
 
-        if (allBookList[_book].title.text.indexOf($routeParams.searchBook) !== -1) {
+        if (allBookList[_book].title.text.toUpperCase().indexOf($routeParams.searchBook.toUpperCase()) !== -1) {
             console.log(JSON.stringify(allBookList[_book]));
             $scope.book = allBookList[_book];
             $scope.dataPresent = true;
